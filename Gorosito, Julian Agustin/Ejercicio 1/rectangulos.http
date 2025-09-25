@@ -1,0 +1,29 @@
+@url=http://localhost:3000
+@id=6  
+
+### listar
+GET {{url}}/rectangulos
+
+### detalle
+GET {{url}}/rectangulos/{{id}}
+
+### crear
+POST {{url}}/rectangulos
+Content-Type: application/json
+
+{
+  "lado1": 12,
+  "lado2": 6
+}
+
+### modificar
+PUT {{url}}/rectangulos/{{id}}
+Content-Type: application/json
+
+{
+  "lado1": 20,
+  "lado2": 10
+}
+
+### eliminar
+DELETE {{url}}/rectangulos/{{id}}
