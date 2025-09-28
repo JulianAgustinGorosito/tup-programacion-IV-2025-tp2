@@ -1,0 +1,42 @@
+@url=http://localhost:3000
+
+### listado de tareas
+GET {{url}}/tareas
+
+### completas
+GET {{url}}/tareas?completada=true
+
+### pendientes
+GET {{url}}/tareas?completada=false
+
+### detalle tarea id=2
+GET {{url}}/tareas/2
+
+### crear tarae
+POST {{url}}/tareas
+Content-Type: application/json
+
+{
+  "nombre": "estudiar mas",
+  "completada": false
+}
+
+### crear tarea repetida
+POST {{url}}/tareas
+Content-Type: application/json
+
+{
+  "nombre": "Estudiar"
+}
+
+### modificar id=2
+PUT {{url}}/tareas/2
+Content-Type: application/json
+
+{
+  "nombre": "estudiar labo cuatro",
+  "completada": true
+}
+
+### borrar id=2
+DELETE {{url}}/tareas/2
