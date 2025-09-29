@@ -1,0 +1,92 @@
+@url=http://localhost:3000
+
+### lista de materias
+GET {{url}}/materias
+
+### crear materia
+POST {{url}}/materias
+Content-Type: application/json
+
+{
+  "nombre": "Programacion IV"
+}
+
+### crear otra materia 
+POST {{url}}/materias
+Content-Type: application/json
+
+{
+  "nombre": "Base de Datos"
+}
+
+### ver materias
+GET {{url}}/materias
+
+### detalle 
+GET {{url}}/materias/1
+
+### modificar nombre
+PUT {{url}}/materias/1
+Content-Type: application/json
+
+{
+  "nombre": "Programacion IV"
+}
+
+### alumno con una meteria
+GET {{url}}/materias/1/alumnos
+
+### borrar materia 
+DELETE {{url}}/materias/2
+
+
+### listado de alumnos
+GET {{url}}/alumnos
+
+### crear alumno para programacion
+POST {{url}}/alumnos
+Content-Type: application/json
+
+{
+  "nombre": "Julian Gorosito",
+  "materiaId": 1,
+  "nota1": 8,
+  "nota2": 7,
+  "nota3": 9
+}
+
+### duplicado
+POST {{url}}/alumnos
+Content-Type: application/json
+
+{
+  "nombre": "Julian Gorosito",
+  "materiaId": 1,
+  "nota1": 6,
+  "nota2": 6,
+  "nota3": 6
+}
+
+### filtro por materia 
+GET {{url}}/alumnos?materiaId=1
+
+### filtrar por nombre
+GET {{url}}/alumnos?nombre=Julian
+
+### detalle por id
+GET {{url}}/alumnos/1
+
+### modificar alumno
+PUT {{url}}/alumnos/1
+Content-Type: application/json
+
+{
+  "nombre": "Julian Gorosito",
+  "materiaId": 1,
+  "nota1": 9,
+  "nota2": 8,
+  "nota3": 10
+}
+
+### borrar alumno
+DELETE {{url}}/alumnos/1
